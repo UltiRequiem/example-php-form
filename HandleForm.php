@@ -2,9 +2,9 @@
 
 
 
-list('name' => $name, 'email' => $email, 'comments' => $comments) = $_REQUEST;
+list('name' => $name, 'email' => $email, 'comment' => $comment) = $_REQUEST;
 
-if (!$name | !$email | !$comments) {
+if (!$name | !$email | !$comment) {
         header('Location: /');
 }
 
@@ -16,7 +16,7 @@ $db = new SQLite3('form_log.db');
 $db->enableExceptions(true);
 
 try {
-        $db->exec("INSERT INTO $db_name (name, email, comments) VALUES('$name', '$email', '$comments')");
+        $db->exec("INSERT INTO $db_name (name, email, comment) VALUES('$name', '$email', '$comment')");
 } catch (Exception) {
         print "$name, you already said something about my dog!";
 
@@ -30,7 +30,7 @@ try {
 }
 
 
-print "Your name is $name, your email is $email and you said '$comments.'";
+print "Your name is $name, your email is $email and you said '$comment.'";
 
 print "<br/>";
 
