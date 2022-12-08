@@ -4,6 +4,7 @@
 <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="output.css">
         <title>Formulario PHP</title>
 </head>
 
@@ -38,6 +39,9 @@
                         echo "
         <div>
         Name: {$row['name']}
+        <br>
+        Comment: {$row['comment']}
+
         </div>
         ";
                 }

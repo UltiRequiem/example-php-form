@@ -20,18 +20,19 @@ try {
 } catch (Exception) {
         print "$name, you already said something about my dog!";
 
-        $res = $db->query("SELECT * FROM $db_name WHERE email MATCH '$email'");
+        $query = "SELECT * FROM $db_name WHERE email='$email'";
 
-        while ($row = $res->fetchArray()) {
-                echo "{$row['id']} {$row['name']} {$row['price']} \n";
-        }
+        $res = $db->query($query);
+
+        list('comment' => $user_comment) = $res->fetchArray();
+
+        print "<br/>";
+
+        print "You said '$user_comment'.";
+
+        print "<br/>";
+
+        print '<a href="/">Return Home</a>';
 
         die();
 }
-
-
-print "Your name is $name, your email is $email and you said '$comment.'";
-
-print "<br/>";
-
-print 'Response saved successfully!';
