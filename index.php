@@ -17,7 +17,7 @@
                 </header>
 
                 <div>
-                        <img src="kira.jpg" alt="Kira's photo" class="object-cover h-48 w-48" />
+                        <img src="https://kira.deno.dev" alt="Kira's photo" class="object-cover h-48 w-48" />
                 </div>
 
 
